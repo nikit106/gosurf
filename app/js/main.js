@@ -12,6 +12,12 @@ $('.slider-dotshead').slick({
     slidesToShow: 4,
     slidesToScroll: 4,
     asNavFor: '.header__slider',
+    responsive: [
+        {
+            breakpoint: 961,
+            setting: 'unslick'
+        }
+    ]
 });
 
 $('.serf-slider').slick({
@@ -20,6 +26,34 @@ $('.serf-slider').slick({
     prevArrow: '<img class = "slider-arrows slider-arrows__left" src = "img/arrows-left.svg" alt = ""></img>',
     nextArrow: '<img class = "slider-arrows slider-arrows__right" src = "img/arrows-right.svg" alt = ""></img>',
     asNavFor: '.slider-map',
+    responsive: [
+        {
+            breakpoint: 1210,
+            settings: {
+                slidesToShow: 3,
+            }
+        },
+        {
+            breakpoint: 900,
+            settings: {
+                slidesToShow: 2,
+            }
+        },
+        {
+            breakpoint: 720,
+            settings: {
+                slidesToShow: 1,
+                centerMode: true
+            }
+        },
+        {
+            breakpoint: 426,
+            settings: {
+                slidesToShow: 1,
+                centerMode: false
+            }
+        }
+    ]
 });
 
 
@@ -29,6 +63,28 @@ $('.slider-map').slick({
     arrows: false,
     asNavFor: '.serf-slider',
     focusOnSelect: true,
+    responsive: [
+        {
+            breakpoint: 1103,
+            settings: {
+                slidesToShow: 3,
+            }
+        },
+        {
+            breakpoint: 900,
+            settings: {
+                slidesToShow: 2,
+                centerMode: true
+            }
+        },
+        {
+            breakpoint: 720,
+            settings: {
+                slidesToShow: 1,
+                centerMode: true
+            }
+        }
+    ]
 });
 
 $('.holder__slider, .shop__slider').slick({
@@ -86,4 +142,8 @@ $('.holder__slider, .shop__slider').slick({
     $('.surfboard-box__circle').on('click', function () {
         $(this).toggleClass('active')
     })
+
+    $('.menu-btn').on('click', function(){
+        $('.menu').toggleClass('active');
+    });
 });
